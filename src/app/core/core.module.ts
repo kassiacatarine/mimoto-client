@@ -7,14 +7,18 @@ import { ToolbarContainerComponent } from './toolbar/toolbar-container/toolbar-c
 import { ToolbarMenuUserComponent } from './toolbar/toolbar-menu-user/toolbar-menu-user.component';
 
 @NgModule({
-  declarations: [ToolbarContainerComponent, ToolbarMenuUserComponent],
+  declarations: [
+    ToolbarContainerComponent,
+    ToolbarMenuUserComponent
+  ],
   imports: [
     CommonModule,
     SharedModule
   ],
   exports: [
     SharedModule,
-    ToolbarContainerComponent
+    ToolbarContainerComponent,
+    ToolbarMenuUserComponent
   ]
 })
 export class CoreModule { }
