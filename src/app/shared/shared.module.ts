@@ -4,6 +4,7 @@ import { MaterialModule } from './modules/material.module';
 
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { AvatarModule } from 'ngx-avatar';
+import { NgxSpinnerModule } from 'ngx-spinner';
 
 @NgModule({
   declarations: [],
@@ -11,12 +12,14 @@ import { AvatarModule } from 'ngx-avatar';
     CommonModule,
     MaterialModule,
     FlexLayoutModule,
-    AvatarModule
+    AvatarModule,
+    NgxSpinnerModule
   ],
   exports: [
     MaterialModule,
     FlexLayoutModule,
-    AvatarModule
+    AvatarModule,
+    NgxSpinnerModule
   ]
 })
 export class SharedModule { }
