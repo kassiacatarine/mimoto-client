@@ -2,24 +2,33 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { MaterialModule } from './modules/material.module';
 
-import { FlexLayoutModule } from '@angular/flex-layout';
+import { FlexLayoutModule, CoreModule } from '@angular/flex-layout';
 import { AvatarModule } from 'ngx-avatar';
 import { NgxSpinnerModule } from 'ngx-spinner';
+import { LayoutMainComponent } from './components/layouts/layout-main/layout-main.component';
+import { ToolbarContainerComponent } from './components/toolbar/toolbar-container/toolbar-container.component';
+import { ToolbarMenuUserComponent } from './components/toolbar/toolbar-menu-user/toolbar-menu-user.component';
 
 @NgModule({
-  declarations: [],
+  declarations: [
+    LayoutMainComponent,
+    ToolbarContainerComponent,
+    ToolbarMenuUserComponent
+  ],
   imports: [
     CommonModule,
     MaterialModule,
     FlexLayoutModule,
     AvatarModule,
-    NgxSpinnerModule
+    NgxSpinnerModule,
+    CoreModule
   ],
   exports: [
     MaterialModule,
     FlexLayoutModule,
     AvatarModule,
-    NgxSpinnerModule
+    NgxSpinnerModule,
+    LayoutMainComponent,
   ]
 })
 export class SharedModule { }
