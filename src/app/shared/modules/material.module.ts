@@ -1,19 +1,27 @@
 import { NgModule } from '@angular/core';
-import { CommonModule } from '@angular/common';
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { MatButtonModule, MatCheckboxModule, MatToolbarModule } from '@angular/material';
-
-const modules = [
-  BrowserAnimationsModule,
+import {
   MatButtonModule,
   MatCheckboxModule,
-  MatToolbarModule
-];
+  MatToolbarModule,
+  MatCardModule,
+  MatFormFieldModule,
+  MatIconModule,
+  MatInputModule,
+  MatDividerModule } from '@angular/material';
 
+const modules = [
+  MatButtonModule,
+  MatCheckboxModule,
+  MatToolbarModule,
+  MatCardModule,
+  MatFormFieldModule,
+  MatInputModule,
+  MatIconModule,
+  MatDividerModule
+];
 
 @NgModule({
   imports: [
-    CommonModule,
     modules
   ],
   exports: [

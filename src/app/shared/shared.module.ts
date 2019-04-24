@@ -2,7 +2,7 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { MaterialModule } from './modules/material.module';
 
-import { FlexLayoutModule, CoreModule } from '@angular/flex-layout';
+import { FlexLayoutModule } from '@angular/flex-layout';
 import { AvatarModule } from 'ngx-avatar';
 import { NgxSpinnerModule } from 'ngx-spinner';
 import { LayoutMainComponent } from './components/layouts/layout-main/layout-main.component';
@@ -20,8 +20,7 @@ import { ToolbarMenuUserComponent } from './components/toolbar/toolbar-menu-user
     MaterialModule,
     FlexLayoutModule,
     AvatarModule,
-    NgxSpinnerModule,
-    CoreModule
+    NgxSpinnerModule
   ],
   exports: [
     MaterialModule,
