@@ -1,0 +1,14 @@
+@mixin responsive-bg-image($image-width, $image-height) {
+  background-size: 100%;
+  height: 0;
+  padding-bottom: percentage($image-height / $image-width);
+  display: block;
+}
+
+
+.background {
+  background: url("../../../../../assets/img/background-2.jpg") no-repeat;
+
+  // substitute for your image dimensions
+  @include responsive-bg-image(204, 95);
+}

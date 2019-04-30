@@ -8,15 +8,19 @@ import { NgxSpinnerModule } from 'ngx-spinner';
 import { LayoutMainComponent } from './components/layouts/layout-main/layout-main.component';
 import { ToolbarContainerComponent } from './components/toolbar/toolbar-container/toolbar-container.component';
 import { ToolbarMenuUserComponent } from './components/toolbar/toolbar-menu-user/toolbar-menu-user.component';
+import { LayoutBackgroundComponent } from './components/layouts/layout-background/layout-background.component';
+import { RouterModule } from '@angular/router';
 
 @NgModule({
   declarations: [
     LayoutMainComponent,
     ToolbarContainerComponent,
-    ToolbarMenuUserComponent
+    ToolbarMenuUserComponent,
+    LayoutBackgroundComponent
   ],
   imports: [
     CommonModule,
+    RouterModule,
     MaterialModule,
     FlexLayoutModule,
     AvatarModule,
@@ -28,6 +32,7 @@ import { ToolbarMenuUserComponent } from './components/toolbar/toolbar-menu-user
     AvatarModule,
     NgxSpinnerModule,
     LayoutMainComponent,
+    LayoutBackgroundComponent
   ]
 })
 export class SharedModule { }
