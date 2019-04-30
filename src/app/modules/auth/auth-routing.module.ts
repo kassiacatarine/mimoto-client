@@ -1,12 +1,14 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { LoginComponent } from './login/login.component';
+import { RecoverComponent } from './recover/recover.component';
 import { LayoutBackgroundComponent } from 'src/app/shared/components/layouts/layout-background/layout-background.component';
 
 const routes: Routes = [
   { path: '', redirectTo: 'oauth2/authorize', pathMatch: 'full' },
   { path: 'oauth2', component: LayoutBackgroundComponent, children: [
-    { path: 'authorize', component: LoginComponent }
+    { path: 'authorize', component: LoginComponent },
+    { path: 'recover', component: RecoverComponent }
   ]}
 ];
 

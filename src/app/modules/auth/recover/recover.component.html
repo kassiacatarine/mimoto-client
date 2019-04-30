@@ -1,0 +1,28 @@
+<app-layout-card>
+  <div class="formRecover" fxLayout="column" *ngIf="true">
+    <mat-card-title>Redefinir senha</mat-card-title>
+    <mat-card-content>
+      <p>
+        Para redefinir a sua senha insira o email abaixo.
+      </p>
+    </mat-card-content>
+    <mat-form-field>
+      <input matInput placeholder="Input" required min="3">
+    </mat-form-field>
+    <div fxFlex fxFlexAlign="end">
+      <button mat-flat-button color="primary">Recuperar</button>
+    </div>
+  </div>
+  <div fxLayout="column" fxLayoutAlign="start center" class="sendRecover" *ngIf="false">
+    <mat-card-title>Email enviado</mat-card-title>
+    <mat-card-content>
+      <div>
+        Um email de redefinição de senha foi enviado para o email@email.com,
+      </div>
+      <div>
+          por favor confira a sua caixa de entrada do seu email.
+      </div>
+    </mat-card-content>
+    <mat-icon class="icon-send">email</mat-icon>
+  </div>
+</app-layout-card>

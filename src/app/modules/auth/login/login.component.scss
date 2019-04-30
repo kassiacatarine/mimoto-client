@@ -1,45 +1,3 @@
-@mixin center($horizontal: true, $vertical: true) {
-  position: absolute;
-
-  @if ($horizontal and $vertical) {
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-
-  } @else if ($horizontal) {
-    left: 50%;
-    transform: translate(-50%, 0);
-
-  } @else if ($vertical) {
-    top: 50%;
-    transform: translate(0, -50%);
-  }
-}
-
-.container {
-  position: relative;
-  width: 50%;
-  height: 200px;
-  margin: 20px auto;
-}
-
-.content {
-  background: white;
-  padding: 20px;
-
-  &.both {
-    @include center;
-  }
-
-  &.horizontal {
-    @include center(true, false);
-  }
-
-  &.vertical {
-    @include center(false, true);
-  }
-}
-
 // Icon back
 
 @mixin mat-icon-button-size($size: 40px) {
@@ -68,4 +26,14 @@
 
 .login-back {
   font-size: 12px;
+}
+
+
+// Link
+
+.link-forget {
+  font-size: 12px;
+  text-decoration: none;
+  color: rgb(9, 199, 199);
+  margin-bottom: 30x;
 }
