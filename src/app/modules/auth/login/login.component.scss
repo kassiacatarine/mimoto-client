@@ -1,0 +1,71 @@
+@mixin center($horizontal: true, $vertical: true) {
+  position: absolute;
+
+  @if ($horizontal and $vertical) {
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+  } @else if ($horizontal) {
+    left: 50%;
+    transform: translate(-50%, 0);
+
+  } @else if ($vertical) {
+    top: 50%;
+    transform: translate(0, -50%);
+  }
+}
+
+.container {
+  position: relative;
+  width: 50%;
+  height: 200px;
+  margin: 20px auto;
+}
+
+.content {
+  background: white;
+  padding: 20px;
+
+  &.both {
+    @include center;
+  }
+
+  &.horizontal {
+    @include center(true, false);
+  }
+
+  &.vertical {
+    @include center(false, true);
+  }
+}
+
+// Icon back
+
+@mixin mat-icon-button-size($size: 40px) {
+  width: $size;
+  height: $size;
+  line-height: $size;
+
+  .mat-icon, .mat-icon-button i {
+    line-height: $size/2;
+  }
+
+  .mat-icon {
+    width: $size/2;
+    height: $size/2;
+    margin: 0;
+  }
+
+  .material-icons {
+    font-size: $size/2;
+  }
+}
+
+.button-icon-back {
+  @include mat-icon-button-size(32px);
+}
+
+.login-back {
+  font-size: 12px;
+}

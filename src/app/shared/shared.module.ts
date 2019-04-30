@@ -10,6 +10,7 @@ import { ToolbarContainerComponent } from './components/toolbar/toolbar-containe
 import { ToolbarMenuUserComponent } from './components/toolbar/toolbar-menu-user/toolbar-menu-user.component';
 import { LayoutBackgroundComponent } from './components/layouts/layout-background/layout-background.component';
 import { RouterModule } from '@angular/router';
+import { ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -21,12 +22,14 @@ import { RouterModule } from '@angular/router';
   imports: [
     CommonModule,
     RouterModule,
+    ReactiveFormsModule,
     MaterialModule,
     FlexLayoutModule,
     AvatarModule,
     NgxSpinnerModule
   ],
   exports: [
+    ReactiveFormsModule,
     MaterialModule,
     FlexLayoutModule,
     AvatarModule,

@@ -1,21 +1,40 @@
-<div fxLayout="column" fxLayoutAlign="center center">
-  <mat-card>
-    <mat-card-title>Entrar</mat-card-title>
-    <div fxLayout="column" fxLayoutAlign="start start">
-      <mat-form-field class="example-form-field">
-          <input matInput type="text" placeholder="Email ou Username">
-          <button mat-button *ngIf="true" matSuffix mat-icon-button aria-label="Clear">
-            <mat-icon>close</mat-icon>
-          </button>
-      </mat-form-field>
-      <div fxFlex fxFlexAlign="end">
-        <button mat-flat-button color="primary">Próximo</button>
-      </div>
-    </div>
-    <div fxLayout="row" fxLayoutAlign="space-around start">
-      <button mat-fab>Facebook</button>
-      <button mat-fab>Gmail</button>
-      <button mat-fab>Microsoft</button>
-    </div>
+<div class="conteiner" fxLayout="column" fxLayoutAlign="center center" fxLayoutGap="gappx">
+  <mat-card class="content both">
+    <form [formGroup]="loginForm">
+        <div fxLayout="column" class="login-account">
+          <mat-card-title>Entrar</mat-card-title>
+          <div fxLayout="column" fxLayoutAlign="start start">
+            <mat-form-field class="example-form-field">
+                <input matInput formControlName="login" type="text" placeholder="Email ou Username" required min="3">
+                <button mat-button *ngIf="true" matSuffix mat-icon-button aria-label="Clear">
+                  <mat-icon>close</mat-icon>
+                </button>
+            </mat-form-field>
+            <div fxFlex fxFlexAlign="end">
+              <button mat-flat-button color="primary">Próximo</button>
+            </div>
+          </div>
+        </div>
+        <div fxLayout="column" class="login-password" *ngIf="false">
+          <div fxLayout="row" class="button-back">
+            <button class="button-icon-back" mat-icon-button>
+              <mat-icon aria-label="Back">arrow_back</mat-icon>
+            </button>
+            <div fxFlex fxFlexAlign="center">
+              <p class="login-back">{{ loginForm.get("login").value }}</p>
+            </div>
+          </div>
+          <mat-card-title>Inserir a senha</mat-card-title>
+          <mat-form-field>
+            <input matInput formControlName="password" placeholder="Senha" [type]="hidePassword ? 'password' : 'text'" required>
+            <button mat-button (click)="hidePassword = !hidePassword" matSuffix mat-icon-button aria-label="password">
+              <mat-icon>{{ hidePassword ? 'visibility_off' : 'visibility'}}</mat-icon>
+            </button>
+          </mat-form-field>
+          <div fxFlex fxFlexAlign="end">
+            <button mat-flat-button color="primary">Entrar</button>
+          </div>
+        </div>
+    </form>
   </mat-card>
 </div>
