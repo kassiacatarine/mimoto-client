@@ -1,4 +1,5 @@
-<mat-toolbar fxLayout="row" fxLayoutAlign="space-between center">
-  <span>Mimoto</span>
+<mat-toolbar class="toolbar" fxLayout="row" fxLayoutAlign="space-between center">
+  <button mat-icon-button (click)="openMenu()"><mat-icon>menu</mat-icon></button>
+  <h1 class="app-name">Mimoto App</h1>
   <app-toolbar-menu-user></app-toolbar-menu-user>
 </mat-toolbar>
