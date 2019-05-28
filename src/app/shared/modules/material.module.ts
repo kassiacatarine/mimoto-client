@@ -10,7 +10,8 @@ import {
   MatDividerModule,
   MatStepperModule,
   MatSidenavModule,
-  MatListModule } from '@angular/material';
+  MatListModule,
+  MatDialogModule } from '@angular/material';
 
 const modules = [
   MatButtonModule,
@@ -23,7 +24,8 @@ const modules = [
   MatDividerModule,
   MatStepperModule,
   MatSidenavModule,
-  MatListModule
+  MatListModule,
+  MatDialogModule
 ];
 
 @NgModule({

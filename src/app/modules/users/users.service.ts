@@ -6,14 +6,11 @@ import { Observable } from 'rxjs';
   providedIn: 'root'
 })
 export class UsersService {
-  protected url = '/users';
+  protected url = 'http://localhost:20000/api/users';
 
-  constructor(
-    private http: HttpClient
-  ) { }
+  constructor(private http: HttpClient) {}
 
   public get users(): Observable<any> {
-    return this.http.get<any>(this.url);
+    return this.http.get(this.url);
   }
-
 }

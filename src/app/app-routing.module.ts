@@ -4,9 +4,9 @@ import { LayoutMainComponent } from './shared/components/layouts/layout-main/lay
 
 const routes: Routes = [
   // { path: '', redirectTo: '/users', pathMatch: 'full' },
-  { path: '', component: LayoutMainComponent, pathMatch: 'full',  children: [
+  { path: '', component: LayoutMainComponent,  children: [
     {
-      path: '', loadChildren: '../app/modules/users/users.module#UsersModule'
+      path: 'users', loadChildren: '../app/modules/users/users.module#UsersModule'
     }
   ]},
   // {

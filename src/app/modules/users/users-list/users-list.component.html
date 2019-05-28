@@ -1,10 +1,9 @@
 <mat-nav-list>
-  <mat-list-item *ngFor="let message of messages">
-    <ngx-avatar matListAvatar size="42" [name]="message"></ngx-avatar>
-    <h3 matLine> {{message}} </h3>
+  <mat-list-item *ngFor="let user of users$ | async">
+    <ngx-avatar matListAvatar size="42" [name]="user.name"></ngx-avatar>
+    <h3 matLine>{{ user.name }}</h3>
     <p matLine>
-      <span> {{message}} </span>
-      <span class="demo-2"> -- {{message}} </span>
+      <span> {{ user.email }} </span>
     </p>
     <mat-divider></mat-divider>
   </mat-list-item>

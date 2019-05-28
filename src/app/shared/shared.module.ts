@@ -11,6 +11,7 @@ import { LayoutBackgroundComponent } from './components/layouts/layout-backgroun
 import { RouterModule } from '@angular/router';
 import { ReactiveFormsModule } from '@angular/forms';
 import { LayoutCardComponent } from './components/layouts/layout-card/layout-card.component';
+import { ErrorDialogComponent } from './components/errors/error-dialog/error-dialog.component';
 
 @NgModule({
   declarations: [
@@ -18,15 +19,16 @@ import { LayoutCardComponent } from './components/layouts/layout-card/layout-car
     ToolbarContainerComponent,
     ToolbarMenuUserComponent,
     LayoutBackgroundComponent,
-    LayoutCardComponent
+    LayoutCardComponent,
+    ErrorDialogComponent
   ],
   imports: [
     CommonModule,
-    RouterModule,
     ReactiveFormsModule,
     MaterialModule,
     FlexLayoutModule,
     AvatarModule,
+    RouterModule
   ],
   exports: [
     ReactiveFormsModule,
@@ -35,7 +37,9 @@ import { LayoutCardComponent } from './components/layouts/layout-card/layout-car
     AvatarModule,
     LayoutMainComponent,
     LayoutBackgroundComponent,
-    LayoutCardComponent
-  ]
+    LayoutCardComponent,
+    ErrorDialogComponent
+  ],
+  providers: []
 })
-export class SharedModule { }
+export class SharedModule {}
