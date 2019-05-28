@@ -12,6 +12,7 @@ import { RouterModule } from '@angular/router';
 import { ReactiveFormsModule } from '@angular/forms';
 import { LayoutCardComponent } from './components/layouts/layout-card/layout-card.component';
 import { ErrorDialogComponent } from './components/errors/error-dialog/error-dialog.component';
+import { ToolbarSearchComponent } from './components/toolbar/toolbar-search/toolbar-search.component';
 
 @NgModule({
   declarations: [
@@ -20,7 +21,8 @@ import { ErrorDialogComponent } from './components/errors/error-dialog/error-dia
     ToolbarMenuUserComponent,
     LayoutBackgroundComponent,
     LayoutCardComponent,
-    ErrorDialogComponent
+    ErrorDialogComponent,
+    ToolbarSearchComponent
   ],
   imports: [
     CommonModule,
