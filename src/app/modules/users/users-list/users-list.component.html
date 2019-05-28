@@ -1,3 +1,11 @@
-<p>
-  users-list works!
-</p>
+<mat-nav-list>
+  <mat-list-item *ngFor="let message of messages">
+    <ngx-avatar matListAvatar size="42" [name]="message"></ngx-avatar>
+    <h3 matLine> {{message}} </h3>
+    <p matLine>
+      <span> {{message}} </span>
+      <span class="demo-2"> -- {{message}} </span>
+    </p>
+    <mat-divider></mat-divider>
+  </mat-list-item>
+</mat-nav-list>

@@ -5,6 +5,7 @@ import { UsersListComponent } from './users-list/users-list.component';
 import { UsersRoutingModule } from './users-routing.module';
 import { CoreModule } from 'src/app/core/core.module';
 import { SharedModule } from 'src/app/shared/shared.module';
+import { UsersService } from './users.service';
 
 @NgModule({
   declarations: [
@@ -15,6 +16,9 @@ import { SharedModule } from 'src/app/shared/shared.module';
     CoreModule,
     SharedModule,
     UsersRoutingModule
+  ],
+  providers: [
+    UsersService
   ]
 })
 export class UsersModule { }

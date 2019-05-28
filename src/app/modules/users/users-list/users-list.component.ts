@@ -7,6 +7,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class UsersListComponent implements OnInit {
 
+  messages: string [] = [ 'Boots' , 'Clogs' , 'Loafers' , 'Mocassins' , 'Sapatilhas' ];
   constructor() { }
 
   ngOnInit() {
