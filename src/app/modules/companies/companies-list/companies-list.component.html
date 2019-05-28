@@ -1,0 +1,10 @@
+<mat-nav-list>
+  <mat-list-item *ngFor="let company of companies$ | async">
+    <ngx-avatar matListAvatar size="42" [name]="company.name"></ngx-avatar>
+    <h3 matLine>{{ company.name }}</h3>
+    <!-- <p matLine>
+      <span> {{ company.email }} </span>
+    </p> -->
+    <mat-divider></mat-divider>
+  </mat-list-item>
+</mat-nav-list>

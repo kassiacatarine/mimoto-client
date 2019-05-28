@@ -10,6 +10,8 @@ import { SharedModule } from './shared/shared.module';
 import { NgxSpinnerModule } from 'ngx-spinner';
 import { HTTP_INTERCEPTORS } from '@angular/common/http';
 import { HttpConfigInterceptor } from './shared/utils/http-config.interceptor';
+import { AppsModule } from './modules/apps/apps.module';
+import { CompaniesModule } from './modules/companies/companies.module';
 
 @NgModule({
   declarations: [AppComponent],
@@ -19,7 +21,9 @@ import { HttpConfigInterceptor } from './shared/utils/http-config.interceptor';
     NgxSpinnerModule,
     CoreModule,
     SharedModule,
-    AppRoutingModule
+    AppRoutingModule,
+    AppsModule,
+    CompaniesModule
   ],
   providers: [
     { provide: HTTP_INTERCEPTORS, useClass: HttpConfigInterceptor, multi: true }

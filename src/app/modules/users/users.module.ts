@@ -6,10 +6,12 @@ import { UsersRoutingModule } from './users-routing.module';
 import { CoreModule } from 'src/app/core/core.module';
 import { SharedModule } from 'src/app/shared/shared.module';
 import { UsersService } from './users.service';
+import { UsersDetailComponent } from './users-detail/users-detail.component';
 
 @NgModule({
   declarations: [
-    UsersListComponent
+    UsersListComponent,
+    UsersDetailComponent
   ],
   imports: [
     CommonModule,

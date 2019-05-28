@@ -9,7 +9,6 @@ import { Observable } from 'rxjs';
 })
 export class UsersListComponent implements OnInit {
   users$: Observable<any>;
-  messages: string[] = ['Boots', 'Clogs', 'Loafers', 'Mocassins', 'Sapatilhas'];
   constructor(private usersService: UsersService) {}
 
   ngOnInit() {

@@ -6,8 +6,14 @@ const routes: Routes = [
   // { path: '', redirectTo: '/users', pathMatch: 'full' },
   { path: '', component: LayoutMainComponent,  children: [
     {
+      path: 'apps', loadChildren: '../app/modules/apps/apps.module#AppsModule'
+    },
+    {
+      path: 'companies', loadChildren: '../app/modules/companies/companies.module#CompaniesModule'
+    },
+    {
       path: 'users', loadChildren: '../app/modules/users/users.module#UsersModule'
-    }
+    },
   ]},
   // {
   //   path: '', loadChildren: '../app/modules/auth/auth.module#AuthModule',
