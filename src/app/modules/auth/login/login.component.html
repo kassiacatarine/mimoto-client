@@ -1,4 +1,4 @@
-<app-layout-card>
+<!-- <app-layout-card>
   <form [formGroup]="loginForm">
       <div fxLayout="column" class="login-account">
         <mat-card-title>Entrar</mat-card-title>
@@ -37,4 +37,34 @@
         </div>
       </div>
   </form>
-</app-layout-card>
+</app-layout-card> -->
+
+<div fxLayout="column" fxLayoutAlign="center center">
+  <div class="header">
+    <h1>Fazer Login no Mimoto</h1>
+    <a href="/signup">ou crie uma conta</a>
+  </div>
+
+
+  <div class="form-login" fxLayout="column">
+    <form [formGroup]="loginForm" fxLayout="column">
+
+      <label for="user">Endereço de E-mail <span class="grey">(Ou nome de usuario)</span></label>
+      <input type="email" formControlName="login" name="user" id="user">
+
+      <label for="pass">Senha</label>
+      <input type="password" formControlName="password" name="pass" id="pass">
+
+      <input type="submit" id="login" value="Fazer Login">
+
+      <div id="google-link" class="google-button">
+        <span class="icon-google"><img src="https://cdn4.iconfinder.com/data/icons/new-google-logo-2015/400/new-google-favicon-512.png" width="18px" height="18px"></span>
+        <span>Fazer Login com o Google</span>
+      </div>
+
+      <a href="/recover">Esqueceu sua senha? </a>
+
+    </form>
+  </div>
+
+</div>
