@@ -1,0 +1,3 @@
+<div fxLayout="column" *ngIf="(user$ | async) as user">
+  <ngx-avatar matListAvatar size="60" [name]="user.name"></ngx-avatar>
+</div>

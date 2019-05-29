@@ -1,25 +1,26 @@
 <div fxLayout="row" fxLayoutAlign="center start">
-  <div fxFlex="99%" fxFlexAlign="start">
-    <ng-container *ngIf="(users$ | async) as users; else notFound">
+  <div fxFlex="99%" fxFlexAlign="start" >
+    <ng-container *ngIf="(apps$ | async) as apps; then notFound">
       <mat-nav-list>
-        <mat-list-item [routerLink]="['/users', user.id]" *ngFor="let user of users">
-          <ngx-avatar matListAvatar size="42" [name]="user.name"></ngx-avatar>
-          <h3 matLine>{{ user.name }}</h3>
+        <mat-list-item *ngFor="let app of apps">
+          <ngx-avatar matListAvatar size="42" [name]="app.name"></ngx-avatar>
+          <h3 matLine>{{ app.name }}</h3>
           <p matLine>
-            <span> {{ user.email }} </span>
+            <!-- <span> {{ app.email }} </span> -->
+            <span>Nome da Empresa</span>
           </p>
           <mat-divider></mat-divider>
         </mat-list-item>
       </mat-nav-list>
       <mat-paginator [length]="100"
-                    [pageSize]="10"
-                    [pageSizeOptions]="[5, 10, 25, 100]">
+        [pageSize]="10"
+        [pageSizeOptions]="[5, 10, 25, 100]">
       </mat-paginator>
     </ng-container>
     <ng-template #notFound>
       <div fxLayout="column" fxLayoutAlign="center center" style="height: 80vh;">
         <mat-icon style="font-size: 180px;height: 180px; line-height: 180px; width: 180px; color: grey;">explore_off</mat-icon>
-        <p>Nenhum dos seus aplicativos foram encontrados</p>
+        <p style="color: grey;">Nenhum dos seus aplicativos foram encontrados</p>
       </div>
     </ng-template>
   </div>
