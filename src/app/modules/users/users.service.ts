@@ -13,4 +13,9 @@ export class UsersService {
   public get users(): Observable<any> {
     return this.http.get(this.url);
   }
+
+  public user(id: string): Observable<any> {
+    return this.http.get(`${this.url}\${id}`);
+  }
+
 }

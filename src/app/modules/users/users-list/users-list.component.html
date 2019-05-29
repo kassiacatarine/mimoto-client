@@ -2,7 +2,7 @@
   <div fxFlex="99%" fxFlexAlign="start">
     <ng-container *ngIf="(users$ | async) as users; else notFound">
       <mat-nav-list>
-        <mat-list-item *ngFor="let user of users">
+        <mat-list-item [routerLink]="['/users', user.id]" *ngFor="let user of users">
           <ngx-avatar matListAvatar size="42" [name]="user.name"></ngx-avatar>
           <h3 matLine>{{ user.name }}</h3>
           <p matLine>

@@ -1,4 +1,8 @@
 import { Component, OnInit } from '@angular/core';
+import { Observable } from 'rxjs';
+import { UsersService } from '../users.service';
+import { ActivatedRoute, Router, ParamMap } from '@angular/router';
+import { switchMap } from 'rxjs/operators';
 
 @Component({
   selector: 'app-users-detail',
@@ -7,9 +11,17 @@ import { Component, OnInit } from '@angular/core';
 })
 export class UsersDetailComponent implements OnInit {
 
-  constructor() { }
+  public user$: Observable<any>;
+
+  constructor(
+    private route: ActivatedRoute,
+    private service: UsersService
+  ) { }
 
   ngOnInit() {
+    this.user$ = this.route.paramMap.pipe(
+      switchMap((params: ParamMap) =>
+        this.service.user(params.get('id')))
+    );
   }
-
 }
