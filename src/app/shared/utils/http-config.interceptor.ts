@@ -14,7 +14,7 @@ import { map, catchError } from 'rxjs/operators';
 
 @Injectable()
 export class HttpConfigInterceptor implements HttpInterceptor {
-  constructor(public errorDialogService: ErrorDialogService) {}
+  constructor(public errorDialogService: ErrorDialogService) { }
   intercept(
     request: HttpRequest<any>,
     next: HttpHandler
@@ -46,8 +46,9 @@ export class HttpConfigInterceptor implements HttpInterceptor {
       }),
       catchError((error: HttpErrorResponse) => {
         let data = {};
+        console.log('error--->>>', error);
         data = {
-          reason: error && error.error.reason ? error.error.reason : '',
+          reason: error && error.statusText ? error.statusText : '',
           status: error.status
         };
         this.errorDialogService.openDialog(data);

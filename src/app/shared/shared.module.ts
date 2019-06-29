@@ -42,6 +42,9 @@ import { ToolbarSearchComponent } from './components/toolbar/toolbar-search/tool
     LayoutCardComponent,
     ErrorDialogComponent
   ],
-  providers: []
+  providers: [],
+  entryComponents: [
+    ErrorDialogComponent
+  ]
 })
-export class SharedModule {}
+export class SharedModule { }
