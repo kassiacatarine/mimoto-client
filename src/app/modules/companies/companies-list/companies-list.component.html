@@ -1,26 +1,10 @@
-<div fxLayout="row" fxLayoutAlign="center start">
-  <div fxFlex="99%" fxFlexAlign="start" >
-    <ng-container *ngIf="(companies$ | async) as companies; else notFound">
-      <mat-nav-list>
-        <mat-list-item *ngFor="let company of companies">
-          <ngx-avatar matListAvatar size="42" [name]="company.name"></ngx-avatar>
-          <h3 matLine>{{ company.name }}</h3>
-          <!-- <p matLine>
-            <span> {{ company.email }} </span>
-          </p> -->
-          <mat-divider></mat-divider>
-        </mat-list-item>
-      </mat-nav-list>
-      <mat-paginator [length]="100"
-                    [pageSize]="10"
-                    [pageSizeOptions]="[5, 10, 25, 100]">
-      </mat-paginator>
-    </ng-container>
-    <ng-template #notFound>
-      <div fxLayout="column" fxLayoutAlign="center center" style="height: 80vh;">
-        <mat-icon style="font-size: 180px;height: 180px; line-height: 180px; width: 180px; color: grey;">explore_off</mat-icon>
-        <p>Nenhum das suas empresas foram encontrados</p>
-      </div>
-    </ng-template>
+<ng-container *ngIf="(companies$ | async) as data; else notFound">
+  <app-list-avatar [data]="data" [listAvatar]="listAvatar" (itemClickEmitter)="itemDetail($event)"></app-list-avatar>
+</ng-container>
+<ng-template #notFound>
+  <div fxLayout="column" fxLayoutAlign="center center" style="height: 80vh;">
+    <mat-icon style="font-size: 180px;height: 180px; line-height: 180px; width: 180px; color: grey;">explore_off
+    </mat-icon>
+    <p>Nenhum das suas empresas foram encontrados</p>
   </div>
-</div>
+</ng-template>

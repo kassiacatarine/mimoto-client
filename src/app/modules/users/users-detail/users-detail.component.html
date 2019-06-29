@@ -1,3 +1,16 @@
-<div fxLayout="column" *ngIf="(user$ | async) as user">
-  <ngx-avatar matListAvatar size="60" [name]="user.name"></ngx-avatar>
+<div fxLayout="row" fxFlex *ngIf="(user$ | async) as user">
+  <div fxLayout="column" fxLayoutAlign="center center" fxFlex="30%">
+    <ngx-avatar matListAvatar size="250" [name]="user.name" [round]="false"></ngx-avatar>
+    <h2>{{ user.name }}</h2>
+  </div>
+  <div fxLayout="column" fxLayoutAlign="space-around" fxFlex fxLayoutGap="gappx">
+    <div>
+      <div>Nome do Usuário</div>
+      <p>{{ user.userName }}</p>
+    </div>
+    <div>
+      <div>Email</div>
+      <p>{{ user.email }}</p>
+    </div>
+  </div>
 </div>

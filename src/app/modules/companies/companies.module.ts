@@ -3,8 +3,8 @@ import { CommonModule } from '@angular/common';
 
 import { CompaniesRoutingModule } from './companies-routing.module';
 import { CompaniesListComponent } from './companies-list/companies-list.component';
-import { CoreModule } from '@angular/flex-layout';
 import { SharedModule } from 'src/app/shared/shared.module';
+import { CoreModule } from 'src/app/core/core.module';
 
 @NgModule({
   declarations: [CompaniesListComponent],
