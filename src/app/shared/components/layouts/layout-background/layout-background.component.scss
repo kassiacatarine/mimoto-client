@@ -7,7 +7,7 @@
 
 
 .background {
-  background: url("../../../../../assets/img/background-2.jpg") no-repeat;
+  // background: url("../../../../../assets/img/background-2.jpg") no-repeat;
 
   // substitute for your image dimensions
   @include responsive-bg-image(204, 95);
