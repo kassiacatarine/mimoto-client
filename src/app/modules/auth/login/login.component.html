@@ -1,6 +1,6 @@
 <app-layout-card>
   <form [formGroup]="loginForm">
-      <div fxLayout="column" class="login-account">
+      <div fxLayout="column" class="login-account" *ngIf="!stepperKassiao">
         <mat-card-title>Entrar</mat-card-title>
         <div fxLayout="column" fxLayoutAlign="start start">
           <mat-form-field class="example-form-field">
@@ -11,13 +11,13 @@
           </mat-form-field>
           <a href="#" class="link-forget">Esqueceu o nome do usuário</a>
           <div fxFlex fxFlexAlign="end">
-            <button mat-flat-button color="primary">Próximo</button>
+            <button mat-flat-button color="primary" (click)="stepperKassiao = true">Próximo</button>
           </div>
         </div>
       </div>
-      <div fxLayout="column" class="login-password" *ngIf="false">
+      <div fxLayout="column" class="login-password" *ngIf="stepperKassiao">
         <div fxLayout="row" class="button-back">
-          <button class="button-icon-back" mat-icon-button>
+          <button class="button-icon-back" (click)="stepperKassiao = false" mat-icon-button>
             <mat-icon aria-label="Back">arrow_back</mat-icon>
           </button>
           <div fxFlex fxFlexAlign="center">
@@ -33,7 +33,7 @@
         </mat-form-field>
         <a href="#" class="link-forget">Esqueci minha senha</a>
         <div fxFlex fxFlexAlign="end">
-          <button mat-flat-button color="primary">Entrar</button>
+          <button mat-flat-button color="primary" (click)="login()">Entrar</button>
         </div>
       </div>
   </form>
