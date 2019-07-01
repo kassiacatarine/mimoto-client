@@ -12,16 +12,14 @@ import { switchMap } from 'rxjs/operators';
 export class UsersDetailComponent implements OnInit {
   public user$: Observable<any>;
 
-  constructor(private route: ActivatedRoute, private service: UsersService) {}
+  constructor(
+    private route: ActivatedRoute,
+    private service: UsersService
+  ) { }
 
   ngOnInit() {
     this.user$ = this.route.paramMap.pipe(
-      switchMap((params: ParamMap) => this.value(params.get('id')))
+      switchMap((params: ParamMap) => this.service.user(params.get('id')))
     );
-  }
-
-  public value(id: string): Observable<any> {
-    console.log(id);
-    return this.service.user(id);
   }
 }

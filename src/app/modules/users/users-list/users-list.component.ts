@@ -34,4 +34,12 @@ export class UsersListComponent implements OnInit {
   public itemDetail(itemId: string): void {
     this.route.navigate([itemId], { relativeTo: this.router });
   }
+
+  public itemEdit(itemId: string): void {
+    this.route.navigate(['edit', itemId], { relativeTo: this.router });
+  }
+
+  public itemDelete(itemId: string): void {
+    this.route.navigate(['delete', itemId], { relativeTo: this.router });
+  }
 }

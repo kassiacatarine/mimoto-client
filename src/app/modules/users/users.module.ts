@@ -7,11 +7,15 @@ import { CoreModule } from 'src/app/core/core.module';
 import { SharedModule } from 'src/app/shared/shared.module';
 import { UsersService } from './users.service';
 import { UsersDetailComponent } from './users-detail/users-detail.component';
+import { UsersFormComponent } from './forms/users-form/users-form.component';
+import { UsersFormProfileComponent } from './forms/users-form-profile/users-form-profile.component';
 
 @NgModule({
   declarations: [
     UsersListComponent,
-    UsersDetailComponent
+    UsersDetailComponent,
+    UsersFormComponent,
+    UsersFormProfileComponent
   ],
   imports: [
     CommonModule,

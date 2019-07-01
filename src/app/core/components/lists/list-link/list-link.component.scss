@@ -1,0 +1,46 @@
+.box-links {
+  padding: 5px 0 10px 10px;
+}
+
+.divider-top {
+  border-top: solid 4px #9c27b0;
+}
+
+.divider-left {
+  border-left: solid 4px #9c27b0;
+}
+
+.divider-right {
+  border-right: solid 4px #9c27b0;
+}
+
+.divider-bottom {
+  border-bottom: solid 4px #9c27b0;
+}
+
+li {
+  list-style-type : none;
+}
+
+.title {
+  margin: 0;
+  padding: 0;
+  font-size: 13px;
+  font-weight: 700;
+}
+
+.link {
+  line-height: 16px;
+  margin: 8px 0 0;
+  position: relative;
+  text-decoration: none;
+  display: block;
+  text-overflow: ellipsis;
+  width: 100%;
+  overflow: hidden;
+  font-size: 13px;
+}
+
+.link:hover {
+  cursor: pointer;
+}

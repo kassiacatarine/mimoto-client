@@ -9,6 +9,16 @@
           <!-- <p matLine>
           <span> {{ item.email }} </span>
         </p> -->
+          <mat-action-list fxLayout="row">
+            <button mat-icon-button type="button" (click)="itemEditEvent(item.id)"
+              aria-label="Example icon-button with a heart icon">
+              <mat-icon>edit</mat-icon>
+            </button>
+            <button mat-icon-button type="button" color="warn" (click)="itemDeleteEvent(item.id)"
+              aria-label="Example icon-button with a heart icon">
+              <mat-icon>delete</mat-icon>
+            </button>
+          </mat-action-list>
           <mat-divider></mat-divider>
         </mat-list-item>
       </mat-nav-list>

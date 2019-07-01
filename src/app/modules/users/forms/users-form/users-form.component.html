@@ -1,0 +1,8 @@
+<div fxLayout="row" fxLayoutAlign="center start" fxLayoutGap="gappx">
+  <div fxLayout="column" *ngIf="(id$ | async) as id" fxFlex="20%" fxLayoutAlign="start center" fxLayoutGap="gappx">
+    <app-list-link *ngIf="!!id"></app-list-link>
+  </div>
+  <div fxLayout="column" fxFlex="98%" fxLayoutGap="gappx">
+    <app-users-form-profile></app-users-form-profile>
+  </div>
+</div>

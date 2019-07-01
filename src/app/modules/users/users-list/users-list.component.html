@@ -1,5 +1,12 @@
+<div fxLayout="row" fxLayoutAlign="start start" fxLayoutGap="gappx">
+  <button mat-stroked-button color="primary" [routerLink]="['new']">
+    <mat-icon aria-hidden="false" aria-label="Example home icon">add_circle_outline</mat-icon>
+    Novo
+  </button>
+</div>
 <ng-container *ngIf="(users$ | async) as data; else notFound">
-  <app-list-avatar [data]="data" [listAvatar]="listAvatar" (itemClickEmitter)="itemDetail($event)"></app-list-avatar>
+  <app-list-avatar [data]="data" [listAvatar]="listAvatar" (itemClickEmitter)="itemDetail($event)"
+    (itemEditEmitter)="itemEdit($event)" (itemDeleteEmitter)="itemDelete($event)"></app-list-avatar>
 </ng-container>
 <ng-template #notFound>
   <div fxLayout="column" fxLayoutAlign="center center" style="height: 80vh;">

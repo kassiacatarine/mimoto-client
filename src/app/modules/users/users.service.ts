@@ -8,7 +8,7 @@ import { Observable } from 'rxjs';
 export class UsersService {
   protected url = 'http://localhost:20000/api/users';
 
-  constructor(private http: HttpClient) {}
+  constructor(private http: HttpClient) { }
 
   public get users(): Observable<any> {
     return this.http.get(this.url);
@@ -16,5 +16,9 @@ export class UsersService {
 
   public user(id: string): Observable<any> {
     return this.http.get(`${this.url}/${id}`);
+  }
+
+  public postProfile(userProfile): Observable<any> {
+    return this.http.post(`${this.url}/profile`, userProfile);
   }
 }
