@@ -5,8 +5,10 @@ import { AppsRoutingModule } from './apps-routing.module';
 import { AppsListComponent } from './apps-list/apps-list.component';
 import { CoreModule } from 'src/app/core/core.module';
 import { SharedModule } from 'src/app/shared/shared.module';
+import { AppsFormProfileComponent } from './forms/apps-form-profile/apps-form-profile.component';
+import { AppsFormComponent } from './forms/apps-form/apps-form.component';
 @NgModule({
-  declarations: [AppsListComponent],
+  declarations: [AppsListComponent, AppsFormProfileComponent, AppsFormComponent],
   imports: [CommonModule, CoreModule, SharedModule, AppsRoutingModule]
 })
 export class AppsModule {}

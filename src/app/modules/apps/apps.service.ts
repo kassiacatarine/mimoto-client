@@ -8,9 +8,13 @@ import { HttpClient } from '@angular/common/http';
 export class AppsService {
   protected url = 'http://localhost:20000/api/apps';
 
-  constructor(private http: HttpClient) {}
+  constructor(private http: HttpClient) { }
 
   public get apps(): Observable<any> {
     return this.http.get(this.url);
+  }
+
+  public postProfile(appProfile): Observable<any> {
+    return this.http.post<any>(`${this.url}/profile`, appProfile);
   }
 }
