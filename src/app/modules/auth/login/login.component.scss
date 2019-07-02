@@ -1,3 +1,7 @@
+body {
+  background-color: white;
+}
+
 // Icon back
 
 @mixin mat-icon-button-size($size: 40px) {
@@ -28,6 +32,27 @@
   font-size: 12px;
 }
 
+//header 
+
+.header {
+  margin-top: 30px;
+}
+
+.header h1 {
+  font-size: 38px;
+  margin-bottom: 5px;
+  color: #333;
+}
+
+.header a {
+  margin-top: 0;
+  font-size: 18px;
+}
+
+.grey {
+  color: hsl(0,0%,60%);
+}
+
 
 // Link
 
@@ -36,4 +61,59 @@
   text-decoration: none;
   color: rgb(9, 199, 199);
   margin-bottom: 30x;
+}
+
+.link-create-account {
+  font-size: 12px;
+  text-decoration: none;
+  color: #298FCA;
+}
+
+// form
+
+.form-login {
+  margin-top: 50px;
+}
+
+.form-login label {
+  margin-bottom: 5px;
+}
+
+.form-login input {
+  background: #EDEFF0;
+  border-radius: 4px;
+  padding: 10px;
+  border: 1px solid #CDD2D4;
+  margin-bottom: 20px;
+}
+
+.form-login #login {
+  background-color: #61BD4F;
+  color: white;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+#google-link {
+  background: white;
+  border-radius: 4px;
+  padding: 10px;
+  border: 1px solid #CDD2D4;
+  margin-bottom: 20px;
+  text-align: center;
+  cursor: pointer;
+}
+
+.icon-google{
+  margin-right: 15px;
+  height: 40px;
+}
+
+.icon-google img{
+  margin-bottom: -3px;
+}
+
+.form-login #loginGoogle {
+  background-color: white; 
+  font-size: 16px;
 }

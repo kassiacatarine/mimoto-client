@@ -28,6 +28,7 @@ export class AppsListComponent implements OnInit {
   }
 
   private get apps(): Observable<any> {
+    console.log("textinhu" + this.appsService.apps)
     return this.appsService.apps;
   }
 

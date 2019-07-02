@@ -6,7 +6,7 @@ import { HttpClient } from '@angular/common/http';
   providedIn: 'root'
 })
 export class AppsService {
-  protected url = 'http://localhost:20000/api/apps';
+  protected url = 'https://localhost:20000/api/Apps';
 
   constructor(private http: HttpClient) { }
 
