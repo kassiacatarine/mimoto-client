@@ -10,6 +10,14 @@
       <mat-label>CNPJ</mat-label>
       <input matInput name="cnpj" type="text" formControlName="cnpj" placeholder="Digite um CNPJ">
     </mat-form-field>
+    <mat-form-field appearance="outline">
+      <mat-label>Responsável</mat-label>
+      <mat-select placeholder="Digite um responsável" formControlName="responsibleId">
+        <mat-option *ngFor="let user of users$ | async" [value]="user.id">
+          {{ user.name }}
+        </mat-option>
+      </mat-select>
+    </mat-form-field>
     <button mat-raised-button type="submit" color="primary">Salvar</button>
   </form>
 </div>

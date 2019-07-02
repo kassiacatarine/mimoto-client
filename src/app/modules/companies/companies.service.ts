@@ -17,4 +17,9 @@ export class CompaniesService {
   public postProfile(companyProfile): Observable<any> {
     return this.http.post<any>(`${this.url}/profile`, companyProfile);
   }
+
+  public get users(): Observable<any> {
+    return this.http.get<any>('http://localhost:20000/api/users');
+  }
+
 }

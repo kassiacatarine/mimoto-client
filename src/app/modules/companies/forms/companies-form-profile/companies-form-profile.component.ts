@@ -2,8 +2,9 @@ import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { Router, ActivatedRoute } from '@angular/router';
 import { MatSnackBar } from '@angular/material';
-import { tap } from 'rxjs/operators';
+import { tap, startWith, map, filter } from 'rxjs/operators';
 import { CompaniesService } from '../../companies.service';
+import { Observable } from 'rxjs';
 
 @Component({
   selector: 'app-companies-form-profile',
@@ -13,6 +14,8 @@ import { CompaniesService } from '../../companies.service';
 export class CompaniesFormProfileComponent implements OnInit {
 
   private formProfile: FormGroup;
+  users$: Observable<Array<any>>;
+
   constructor(
     private formBuilder: FormBuilder,
     private companiesService: CompaniesService,
@@ -23,12 +26,14 @@ export class CompaniesFormProfileComponent implements OnInit {
 
   ngOnInit() {
     this.initForm();
+    this.users$ = this.companiesService.users;
   }
 
   private initForm(): void {
     this.formProfile = this.formBuilder.group({
       name: [null, [Validators.required, Validators.minLength(3)]],
       cnpj: [null, Validators.minLength(3)],
+      responsibleId: [null, Validators.required]
     });
   }
 

@@ -10,6 +10,22 @@
       <mat-label>Domínio</mat-label>
       <input matInput name="domain" type="text" formControlName="domain" placeholder="Digite um nome do domínio">
     </mat-form-field>
+    <mat-form-field appearance="outline">
+      <mat-label>Empresa</mat-label>
+      <mat-select placeholder="Digite uma empresa" name="companyId" formControlName="companyId">
+        <mat-option *ngFor="let company of companies$ | async" [value]="company.id">
+          {{ company.name }}
+        </mat-option>
+      </mat-select>
+    </mat-form-field>
+    <mat-form-field appearance="outline">
+      <mat-label>Responsável</mat-label>
+      <mat-select placeholder="Digite um responsável" name="responsibleId" formControlName="responsibleId">
+        <mat-option *ngFor="let user of users$ | async" [value]="user.id">
+          {{ user.name }}
+        </mat-option>
+      </mat-select>
+    </mat-form-field>
     <button mat-raised-button type="submit" color="primary">Salvar</button>
   </form>
 </div>

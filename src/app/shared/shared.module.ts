@@ -13,6 +13,7 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { LayoutCardComponent } from './components/layouts/layout-card/layout-card.component';
 import { ErrorDialogComponent } from './components/errors/error-dialog/error-dialog.component';
 import { ToolbarSearchComponent } from './components/toolbar/toolbar-search/toolbar-search.component';
+import { UsersService } from '../modules/users/users.service';
 
 @NgModule({
   declarations: [
@@ -42,7 +43,6 @@ import { ToolbarSearchComponent } from './components/toolbar/toolbar-search/tool
     LayoutCardComponent,
     ErrorDialogComponent
   ],
-  providers: [],
   entryComponents: [
     ErrorDialogComponent
   ]

@@ -17,4 +17,12 @@ export class AppsService {
   public postProfile(appProfile): Observable<any> {
     return this.http.post<any>(`${this.url}/profile`, appProfile);
   }
+
+  public get users(): Observable<any> {
+    return this.http.get<any>('http://localhost:20000/api/users');
+  }
+
+  public get companies(): Observable<any> {
+    return this.http.get<any>('http://localhost:20000/api/companies');
+  }
 }
