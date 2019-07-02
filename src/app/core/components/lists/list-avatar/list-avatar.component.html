@@ -1,8 +1,8 @@
 <ng-container *ngIf="!!data?.length; else listEmpty">
   <div fxLayout="row" fxLayoutAlign="center start">
     <div class="list" fxFlex="99%" fxFlexAlign="start">
-      <mat-nav-list class="list-datas">
-        <mat-list-item (click)="itemEvent(item.id)" *ngFor="let item of data">
+      <mat-list class="list-datas">
+        <mat-list-item *ngFor="let item of data">
           <ngx-avatar matListAvatar [size]="listAvatar.iconSize ? listAvatar.iconSize : 42" [name]="item['name']">
           </ngx-avatar>
           <h3 matLine>{{ item['name'] }}</h3>
@@ -21,7 +21,7 @@
           </mat-action-list>
           <mat-divider></mat-divider>
         </mat-list-item>
-      </mat-nav-list>
+      </mat-list>
     </div>
   </div>
 </ng-container>
