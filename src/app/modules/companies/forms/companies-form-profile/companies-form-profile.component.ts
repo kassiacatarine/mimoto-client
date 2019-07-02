@@ -1,21 +1,21 @@
-import { UsersService } from './../../users.service';
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
-import { tap } from 'rxjs/operators';
 import { Router, ActivatedRoute } from '@angular/router';
 import { MatSnackBar } from '@angular/material';
+import { tap } from 'rxjs/operators';
+import { CompaniesService } from '../../companies.service';
 
 @Component({
-  selector: 'app-users-form-profile',
-  templateUrl: './users-form-profile.component.html',
-  styleUrls: ['./users-form-profile.component.scss']
+  selector: 'app-companies-form-profile',
+  templateUrl: './companies-form-profile.component.html',
+  styleUrls: ['./companies-form-profile.component.scss']
 })
-export class UsersFormProfileComponent implements OnInit {
+export class CompaniesFormProfileComponent implements OnInit {
 
   private formProfile: FormGroup;
   constructor(
     private formBuilder: FormBuilder,
-    private usersService: UsersService,
+    private companiesService: CompaniesService,
     private route: Router,
     private router: ActivatedRoute,
     private _snackBar: MatSnackBar
@@ -28,15 +28,13 @@ export class UsersFormProfileComponent implements OnInit {
   private initForm(): void {
     this.formProfile = this.formBuilder.group({
       name: [null, [Validators.required, Validators.minLength(3)]],
-      userName: [null, Validators.minLength(3)],
-      email: [null, [Validators.email, Validators.required]],
-      location: [null]
+      cnpj: [null, Validators.minLength(3)],
     });
   }
 
   public onFormSubmit(): void {
-    this.usersService.postProfile(this.formProfile.value).pipe(
-      tap(() => this._snackBar.open('Usuário criado com sucesso!', 'OK', {
+    this.companiesService.postProfile(this.formProfile.value).pipe(
+      tap(() => this._snackBar.open('Empresa criada com sucesso!', 'OK', {
         duration: 2000,
       })),
       tap(() => this.route.navigate(['../'], { relativeTo: this.router }))

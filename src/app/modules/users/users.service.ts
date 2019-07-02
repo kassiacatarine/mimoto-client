@@ -11,14 +11,14 @@ export class UsersService {
   constructor(private http: HttpClient) { }
 
   public get users(): Observable<any> {
-    return this.http.get(this.url);
+    return this.http.get<any>(this.url);
   }
 
   public user(id: string): Observable<any> {
-    return this.http.get(`${this.url}/${id}`);
+    return this.http.get<any>(`${this.url}/${id}`);
   }
 
   public postProfile(userProfile): Observable<any> {
-    return this.http.post(`${this.url}/profile`, userProfile);
+    return this.http.post<any>(`${this.url}/profile`, userProfile);
   }
 }

@@ -4,15 +4,19 @@
   <form fxLayout="column" fxFlex [formGroup]="formProfile" method="post" (ngSubmit)="onFormSubmit()">
     <mat-form-field appearance="outline">
       <mat-label>Nome</mat-label>
-      <input matInput placeholder="Digite um nome">
+      <input matInput name="name" type="text" formControlName="name" placeholder="Digite um nome">
+    </mat-form-field>
+    <mat-form-field appearance="outline">
+      <mat-label>Nome de Usuário</mat-label>
+      <input matInput name="userName" type="text" formControlName="userName" placeholder="Digite um nome de usuário">
     </mat-form-field>
     <mat-form-field appearance="outline">
       <mat-label>Email</mat-label>
-      <input matInput placeholder="Digite um email">
+      <input matInput name="email" type="email" formControlName="email" placeholder="Digite um email">
     </mat-form-field>
     <mat-form-field appearance="outline">
       <mat-label>Localização</mat-label>
-      <input matInput placeholder="Digite um pais">
+      <input matInput name="location" type="text" formControlName="location" placeholder="Digite um pais">
     </mat-form-field>
     <button mat-raised-button type="submit" color="primary">Salvar</button>
   </form>

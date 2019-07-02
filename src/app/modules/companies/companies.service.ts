@@ -8,9 +8,13 @@ import { HttpClient } from '@angular/common/http';
 export class CompaniesService {
   protected url = 'http://localhost:20000/api/companies';
 
-  constructor(private http: HttpClient) {}
+  constructor(private http: HttpClient) { }
 
   public get companies(): Observable<any> {
     return this.http.get(this.url);
+  }
+
+  public postProfile(companyProfile): Observable<any> {
+    return this.http.post<any>(`${this.url}/profile`, companyProfile);
   }
 }

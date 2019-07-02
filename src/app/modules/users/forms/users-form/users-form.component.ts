@@ -12,21 +12,15 @@ import { switchMap } from 'rxjs/operators';
 export class UsersFormComponent implements OnInit {
 
   public id$: Observable<string>;
-  private _id: string;
 
   constructor(
-    private route: ActivatedRoute,
-    private service: UsersService
+    private route: ActivatedRoute
   ) { }
 
   ngOnInit() {
-    this._id = this.route.paramMap.pipe(
+    this.id$ = this.route.paramMap.pipe(
       switchMap((params: ParamMap) => params.get('id'))
     );
-  }
-
-  public get id(): string {
-    return this._id;
   }
 
 }
