@@ -4,6 +4,8 @@ import { UsersService } from '../users.service';
 import { Observable } from 'rxjs';
 import { ListAvatar } from 'src/app/core/components/lists/list-avatar/list-avatar';
 import { Router, ActivatedRoute } from '@angular/router';
+import { MatDialog } from '@angular/material';
+import { ConfirmDialogModel, ConfirmDialogComponent } from 'src/app/core/components/dialog/confirm-dialog/confirm-dialog.component';
 
 @Component({
   selector: 'app-users-list',
@@ -20,7 +22,8 @@ export class UsersListComponent implements OnInit {
   constructor(
     private usersService: UsersService,
     private route: Router,
-    private router: ActivatedRoute
+    private router: ActivatedRoute,
+    public dialog: MatDialog
   ) { }
 
   ngOnInit() {
@@ -41,5 +44,20 @@ export class UsersListComponent implements OnInit {
 
   public itemDelete(itemId: string): void {
     this.route.navigate(['delete', itemId], { relativeTo: this.router });
+  }
+
+  confirmDialog(): void {
+    const message = `Você tem certeza de que quer fazer isso?`;
+
+    const dialogData = new ConfirmDialogModel('Excluir usuário', message);
+
+    const dialogRef = this.dialog.open(ConfirmDialogComponent, {
+      maxWidth: '400px',
+      data: dialogData
+    });
+
+    // dialogRef.afterClosed().subscribe(dialogResult => {
+    //   this.result = dialogResult;
+    // });
   }
 }

@@ -6,7 +6,7 @@ import { HttpClient } from '@angular/common/http';
   providedIn: 'root'
 })
 export class LoginService {
-  protected url = 'http://localhost:20000/api/oauth/login';
+  protected url = 'http://localhost:20000/api/login';
 
   constructor(private http: HttpClient) { }
 
