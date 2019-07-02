@@ -6,11 +6,11 @@ import { HttpClient } from '@angular/common/http';
   providedIn: 'root'
 })
 export class LoginService {
-  protected url = 'http://localhost:20000/api/login';
+  protected url = 'http://localhost:20000/api/oauth/login';
 
-  constructor(private http: HttpClient) {}
+  constructor(private http: HttpClient) { }
 
-  public login(email:string, senha:string): Observable<any> {
-    return this.http.get(`${this.url}?email=${email}&senha=${senha}`)
+  public login(email: string, senha: string): Observable<any> {
+    return this.http.get(`${this.url}?email=${email}&senha=${senha}`);
   }
 }

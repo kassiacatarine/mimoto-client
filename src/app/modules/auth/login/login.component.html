@@ -47,7 +47,7 @@
 
 
   <div class="form-login" fxLayout="column">
-    <form [formGroup]="loginForm" fxLayout="column">
+    <form [formGroup]="loginForm" method="post" (ngSubmit)="login()" fxLayout="column">
 
       <label for="user">Endereço de E-mail <span class="grey">(Ou nome de usuario)</span></label>
       <input type="email" formControlName="login" name="user" id="user">
@@ -58,7 +58,9 @@
       <input type="submit" id="login" value="Fazer Login">
 
       <div id="google-link" class="google-button">
-        <span class="icon-google"><img src="https://cdn4.iconfinder.com/data/icons/new-google-logo-2015/400/new-google-favicon-512.png" width="18px" height="18px"></span>
+        <span class="icon-google"><img
+            src="https://cdn4.iconfinder.com/data/icons/new-google-logo-2015/400/new-google-favicon-512.png"
+            width="18px" height="18px"></span>
         <span>Fazer Login com o Google</span>
       </div>
 

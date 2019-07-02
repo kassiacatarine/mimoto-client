@@ -6,6 +6,8 @@ import { AppsFormComponent } from './forms/apps-form/apps-form.component';
 const routes: Routes = [
   { path: '', component: AppsListComponent },
   { path: 'new', component: AppsFormComponent },
+  { path: 'edit/:id ', component: AppsFormComponent },
+  { path: 'delete/:id ', component: AppsFormComponent }
 ];
 
 @NgModule({

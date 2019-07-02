@@ -19,7 +19,8 @@ import { ConfirmDialogComponent } from './components/dialog/confirm-dialog/confi
   exports: [
     SharedModule,
     ListAvatarComponent,
-    ListLinkComponent
+    ListLinkComponent,
+    ConfirmDialogComponent
   ]
 })
 export class CoreModule { }
