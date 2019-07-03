@@ -15,7 +15,9 @@ export class ListAvatarComponent implements OnInit {
 
   @Output()
   itemClickEmitter: EventEmitter<string> = new EventEmitter();
+  @Output()
   itemEditEmitter: EventEmitter<string> = new EventEmitter();
+  @Output()
   itemDeleteEmitter: EventEmitter<string> = new EventEmitter();
 
   constructor() { }

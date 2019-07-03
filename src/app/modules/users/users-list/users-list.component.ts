@@ -44,12 +44,13 @@ export class UsersListComponent implements OnInit {
 
   public itemDelete(itemId: string): void {
     this.route.navigate(['delete', itemId], { relativeTo: this.router });
+    this.confirmDialog();
   }
 
-  confirmDialog(): void {
+  private confirmDialog(): void {
     const message = `Você tem certeza de que quer fazer isso?`;
 
-    const dialogData = new ConfirmDialogModel('Excluir usuário', message);
+    const dialogData = new ConfirmDialogModel('Excluir Usuário', message);
 
     const dialogRef = this.dialog.open(ConfirmDialogComponent, {
       maxWidth: '400px',
@@ -59,5 +60,6 @@ export class UsersListComponent implements OnInit {
     // dialogRef.afterClosed().subscribe(dialogResult => {
     //   this.result = dialogResult;
     // });
+    this.route.navigate(['../../'], { relativeTo: this.router });
   }
 }

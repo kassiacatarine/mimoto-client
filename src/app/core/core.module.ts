@@ -21,6 +21,9 @@ import { ConfirmDialogComponent } from './components/dialog/confirm-dialog/confi
     ListAvatarComponent,
     ListLinkComponent,
     ConfirmDialogComponent
+  ],
+  entryComponents: [
+    ConfirmDialogComponent
   ]
 })
 export class CoreModule { }
